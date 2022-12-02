@@ -1,27 +1,52 @@
-import { useRef } from 'react'
-import dynamic from 'next/dynamic'
-import Header from '@/config'
-import Layout from '@/components/dom/Layout'
-import '@/styles/index.css'
+import "@/styles/index.css";
+import { enableLegendStateReact } from "@legendapp/state/react";
+import dynamic from "next/dynamic";
+import { useMemo, useRef } from "react";
+import { KeyboardControls } from "@react-three/drei";
+import Layout from "@/components/dom/Layout";
+import Header from "@/config";
 
-const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: true })
+const Scene = dynamic(() => import("@/components/canvas/Scene"), { ssr: true });
 
-export default function App({ Component, pageProps = { title: 'index' } }) {
-  const ref = useRef()
+enableLegendStateReact();
+
+export default function App({
+  Component,
+  pageProps = { title: `PHM's Portfolio` },
+}) {
+  const ref = useRef();
+
+  const map = useMemo(
+    () => [
+      { name: "forward", keys: ["ArrowUp", "w", "W"] },
+      { name: "backward", keys: ["ArrowDown", "s", "S"] },
+      { name: "left", keys: ["ArrowLeft", "a", "A"] },
+      { name: "right", keys: ["ArrowRight", "d", "D"] },
+      { name: "sprint", keys: ["Shift"] },
+      { name: "event", keys: ["Enter"] },
+      { name: "out", keys: ["Escape"] },
+    ],
+    []
+  );
+
   return (
     <>
       <Header title={pageProps.title} />
-      <Layout ref={ref}>
-        <Component {...pageProps} />
-        {/* The canvas can either be in front of the dom or behind. If it is in front it can overlay contents.
-         * Setting the event source to a shared parent allows both the dom and the canvas to receive events.
-         * Since the event source is now shared, the canvas would block events, we prevent that with pointerEvents: none. */}
-        {Component?.canvas && (
-          <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
-            {Component.canvas(pageProps)}
-          </Scene>
-        )}
-      </Layout>
+      <KeyboardControls map={map}>
+        <Layout ref={ref}>
+          {Component?.canvas && (
+            <Scene
+              className="pointer-events-none"
+              eventSource={ref}
+              eventPrefix="client"
+            >
+              {Component.canvas(pageProps)}
+            </Scene>
+          )}
+
+          <Component {...pageProps} />
+        </Layout>
+      </KeyboardControls>
     </>
-  )
+  );
 }

@@ -1,11 +1,9 @@
 {
-  "name": "react-three-next",
-  "version": "2.0.0",
-  "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
-  ],
+  "name": "phm-portfolio",
+  "version": "1.0.0",
+  "authors": "Phan Huy Manh",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=14"
   },
@@ -20,8 +18,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@legendapp/state": "^0.22.3",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.0",
+    "@react-three/rapier": "^0.11.0",
     "glsl-random": "^0.0.5",
     "next": "^13.0.1",
     "next-pwa": "^5.6.0",

@@ -1,18 +1,25 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by potrace 1.11, written by Peter Selinger 2001-2013
-</metadata>
-<g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M0 1000 l0 -1000 1000 0 1000 0 0 1000 0 1000 -1000 0 -1000 0 0
--1000z m1400 140 l0 -260 -120 0 -120 0 0 140 0 140 -140 0 -140 0 0 120 0
-120 260 0 260 0 0 -260z m-560 -140 l0 -120 -120 0 -120 0 0 120 0 120 120 0
-120 0 0 -120z m280 0 l0 -120 -120 0 -120 0 0 120 0 120 120 0 120 0 0 -120z
-m0 -280 l0 -120 -120 0 -120 0 0 120 0 120 120 0 120 0 0 -120z"/>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2)">
+<rect width="512" height="512" fill="#1A1616"/>
+<rect x="64.5" y="66.5" width="123" height="378" rx="61.5" stroke="url(#paint0_linear_1_2)" stroke-width="7"/>
+<rect x="325.5" y="66.5" width="123" height="378" rx="61.5" stroke="url(#paint1_linear_1_2)" stroke-width="7"/>
+<path d="M487.864 121.5L256.5 275.793L25.1364 121.5L487.864 121.5Z" stroke="url(#paint2_linear_1_2)" stroke-width="7"/>
 </g>
+<defs>
+<linearGradient id="paint0_linear_1_2" x1="126" y1="63" x2="126" y2="448" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8360C3"/>
+<stop offset="1" stop-color="#2EBF91"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1_2" x1="387" y1="63" x2="387" y2="448" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8360C3"/>
+<stop offset="1" stop-color="#2EBF91"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1_2" x1="256.5" y1="280" x2="256.5" y2="64" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9679EB"/>
+<stop offset="1" stop-color="#E94057"/>
+</linearGradient>
+<clipPath id="clip0_1_2">
+<rect width="512" height="512" fill="white"/>
+</clipPath>
+</defs>
 </svg>

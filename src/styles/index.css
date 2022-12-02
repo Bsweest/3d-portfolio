@@ -6,7 +6,7 @@
   * {
     box-sizing: border-box;
   }
-  
+
   html,
   body,
   #__next {
@@ -15,5 +15,46 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+  }
+}
+
+@layer components {
+  .speech_bubble {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background: #151da6;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+    min-width: 10rem;
+    box-shadow: 0 0 0 0.4rem #15155b;
+  }
+  .speech_bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 2.5rem;
+    width: 0;
+    height: 0;
+    border: 1.75rem solid transparent;
+    border-top-color: #151da6;
+    border-bottom: 0;
+    border-right: 0;
+    margin-right: 0.3rem;
+    margin-bottom: -1.7rem;
+  }
+
+  .speech_bubble:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 2.5rem;
+    width: 0;
+    height: 0;
+    border: 2.5rem solid transparent;
+    border-top-color: #15155b;
+    border-bottom: 0;
+    border-right: 0;
+    margin-bottom: -2.5rem;
   }
 }

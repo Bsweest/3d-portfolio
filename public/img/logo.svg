@@ -1,6 +1,24 @@
-<svg viewBox="0 0 800 800" fill="black" xmlns="http://www.w3.org/2000/svg">
-  <rect x="280" y="560" width="240" height="240" fill="inherit" />
-  <rect x="280" y="280" width="240" height="240" fill="inherit" />
-  <rect y="280" width="240" height="240" fill="inherit" />
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M560 0H280V240H560V520H800V0H560Z" fill="inherit" />
+<svg width="490" height="385" viewBox="0 0 490 385" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2)">
+<rect x="51.5" y="3.5" width="123" height="378" rx="61.5" stroke="url(#paint0_linear_1_2)" stroke-width="7"/>
+<rect x="312.5" y="3.5" width="123" height="378" rx="61.5" stroke="url(#paint1_linear_1_2)" stroke-width="7"/>
+<path d="M474.864 58.5L243.5 212.793L12.1364 58.5L474.864 58.5Z" stroke="url(#paint2_linear_1_2)" stroke-width="7"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_2" x1="113" y1="0" x2="113" y2="385" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8360C3"/>
+<stop offset="1" stop-color="#2EBF91"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1_2" x1="374" y1="0" x2="374" y2="385" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8360C3"/>
+<stop offset="1" stop-color="#2EBF91"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1_2" x1="243.5" y1="217" x2="243.5" y2="1" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9679EB"/>
+<stop offset="1" stop-color="#E94057"/>
+</linearGradient>
+<clipPath id="clip0_1_2">
+<rect width="490" height="385" fill="white"/>
+</clipPath>
+</defs>
 </svg>
