@@ -1,4 +1,5 @@
 import { Debug, Physics } from "@react-three/rapier";
+import { CycleRaycast } from "@react-three/drei";
 import MyName from "@/components/canvas/furnitures/MyName";
 import Persona4Card from "@/components/canvas/furnitures/Persona4Card";
 import Ground from "@/components/canvas/Ground";
@@ -12,10 +13,15 @@ import SpeechBuble from "@/components/dom/SpeechBuble";
 import Bowling from "@/components/canvas/furnitures/bowling";
 import ZoneStatic from "@/components/canvas/pieces/ClickZone";
 import SoccerBall from "@/components/canvas/furnitures/SoccerBall";
+import JoyStick from "@/components/dom/JoyStick";
+import { useDetectMobile } from "@/templates/global/Joystick";
 export default function Page(props) {
+  const showJoy = useDetectMobile();
+
   return (
     <>
       <SpeechBuble />
+      {showJoy && <JoyStick />}
     </>
   );
 }
@@ -37,6 +43,8 @@ Page.canvas = (props) => {
       <GoalKeeper />
       <Experience />
       <ZoneStatic />
+
+      <CycleRaycast />
 
       {/* <Debug /> */}
     </Physics>

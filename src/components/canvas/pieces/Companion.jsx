@@ -6,19 +6,23 @@ import {
 } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 
-import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";
+import { useSelector } from "@legendapp/state/react";
 import { useFrame } from "@react-three/fiber";
+import { CuboidCollider, MeshCollider, RigidBody } from "@react-three/rapier";
+import { joystickStates, useDetectMobile } from "@/templates/global/Joystick";
 
 export default function Companion() {
   const rigBody = useRef();
   const modelRef = useRef();
   const collider = useRef();
+  const isM = useDetectMobile();
 
   const [, get] = useKeyboardControls();
-  const moving = useKeyboardControls(
+  const movingPC = useKeyboardControls(
     (event) => event.forward || event.backward || event.left || event.right
   );
-  const out = useKeyboardControls((event) => event.out);
+  const movingM = useSelector(() => joystickStates.moving.get());
+  const moving = isM ? movingM : movingPC;
 
   const { nodes, materials, animations } = useGLTF("/models/companion.glb");
   const { actions } = useAnimations(animations, modelRef);
@@ -33,15 +37,10 @@ export default function Companion() {
     }
   }, [actions, moving]);
 
-  useEffect(() => {
-    if (out) {
-      modelRef.current.rotation.y = 0;
-      rigBody.current.setTranslation({ x: 0, y: 1, z: 0 });
-    }
-  }, [out]);
-
   useFrame(() => {
-    const { forward, backward, left, right, sprint } = get();
+    const { forward, backward, left, right, sprint } = isM
+      ? joystickStates.peek()
+      : get();
 
     const front = (sprint ? 22 : 12) * (Number(backward) - Number(forward));
     const side = (sprint ? 22 : 12) * (Number(right) - Number(left));

@@ -1,9 +1,9 @@
-import { Box, Edges, useKeyboardControls } from "@react-three/drei";
+import { Box, Edges, useCursor, useKeyboardControls } from "@react-three/drei";
 import { CuboidCollider, RigidBody } from "@react-three/rapier";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import narrator from "@/templates/global/Narrator";
+import { useDetectMobile, useEventMobile } from "@/templates/global/Joystick";
 
 export default function ZoneStatic() {
   const showBubble = (value) => {
@@ -37,9 +37,8 @@ export default function ZoneStatic() {
       >
         I both love manga and anime culture and despite all the niche things
         coming with it. Yet days are so fast to me right now so I only read
-        manga and watch Vtuber regularly. If you want to discuss about anime
-        with me, make sure that series is not mid. And yes, my favourite series
-        is JoJo&apos; Bizarre Adventure, how could you tell?
+        manga and watch Vtuber regularly. And yes, my favourite series is
+        JoJo&apos; Bizarre Adventure, how could you tell?
       </ClickZone>
       {/* Game */}
       <ClickZone
@@ -112,8 +111,10 @@ export default function ZoneStatic() {
 
 const ClickZone = ({ args, pos, eventID, children, runFun }) => {
   const [contract, setContract] = useState(false);
-
-  const pressed = useKeyboardControls((state) => state.event);
+  const isM = useDetectMobile();
+  const enterPress = useKeyboardControls((state) => state.event);
+  const mobileTouch = useEventMobile();
+  const pressed = isM ? mobileTouch : enterPress;
 
   const goIn = ({ other }) => {
     if (other.rigidBodyObject.name === "Companion") {
@@ -133,11 +134,16 @@ const ClickZone = ({ args, pos, eventID, children, runFun }) => {
     }
   }, [children, eventID, pressed, runFun]);
 
+  useCursor(contract);
+
   return (
     <>
       <Box
         args={[args[0], contract ? 0.7 : 0.4, args[1]]}
         position={[pos[0], 0.25, pos[1]]}
+        onClick={(e) => (e.stopPropagation(), runFun(children))}
+        onPointerOver={(e) => (e.stopPropagation(), setContract(true))}
+        onPointerOut={() => setContract(false)}
       >
         <Edges color={contract ? "#FF0000" : "#009b97"} />
         <meshBasicMaterial transparent={true} opacity={0} />

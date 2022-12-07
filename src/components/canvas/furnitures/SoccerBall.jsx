@@ -74,7 +74,7 @@ const Goal = () => {
 
   return (
     <>
-      <RigidBody type="fixed" position={[-59, 1.8, 0]}>
+      <RigidBody type="fixed" position={[-59.4, 1.8, 0]}>
         <CuboidCollider
           sensor
           args={[4.7, 1.8, 1]}

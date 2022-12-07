@@ -13,8 +13,8 @@ export default class FloorMaterial extends ShaderMaterial {
     super();
 
     this.topLeft = "#1a2c80";
-    this.topRight = "#4a478a";
-    this.bottomRight = "#282157";
+    this.topRight = "#282157";
+    this.bottomRight = "#4a478a";
     this.bottomLeft = "#da8a8b";
 
     this.uniforms = {

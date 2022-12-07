@@ -4233,6 +4233,11 @@ react-is@^16.13.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-joystick-component@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-joystick-component/-/react-joystick-component-6.0.0.tgz#5768762a6c52de57215a74ef54438221afedf36b"
+  integrity sha512-kbhDrPbasELoQcUxG+YNqsjsZDV3xo0TBnGXjv/TekoLZHZmmj/X/Y85YfvEPzWos6C3YmOjQKc5gK59o+jI2w==
+
 react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
