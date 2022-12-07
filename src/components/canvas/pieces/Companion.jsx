@@ -42,8 +42,8 @@ export default function Companion() {
   useFrame(() => {
     const { forward, backward, left, right, sprint } = isM ? controlM : get();
 
-    const front = (sprint ? 22 : 12) * (Number(backward) - Number(forward));
-    const side = (sprint ? 22 : 12) * (Number(right) - Number(left));
+    const front = (sprint ? 21 : 12) * (Number(backward) - Number(forward));
+    const side = (sprint ? 21 : 12) * (Number(right) - Number(left));
 
     rigBody.current.setLinvel({ x: side, y: 0, z: front });
 

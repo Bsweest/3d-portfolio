@@ -9,15 +9,14 @@ const Persona4Card = () => {
     "/img/pictures/YuNarukami.png",
     "/img/pictures/cardback.png",
   ]);
-  const rotate = Math.PI / 6;
 
   useFrame(() => {
     if (!card.current) return;
-    card.current.rotation.y += 0.01;
+    card.current.rotation.y += 0.009;
   });
 
   return (
-    <mesh ref={card} position={[-7, 4, 60]} rotation={[0, 0, rotate]}>
+    <mesh ref={card} position={[-7, 4, 60]} rotation={[0, 0, Math.PI / 6]}>
       <Plane args={[4, 6]}>
         <meshLambertMaterial map={front} />
       </Plane>
