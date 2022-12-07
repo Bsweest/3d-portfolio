@@ -21,7 +21,6 @@ export default function App({
   useEffect(() => {
     const x = /Mobi/i.test(window.navigator.userAgent);
     isMobile.set(x);
-    console.log("x", x);
   }, []);
 
   const map = useMemo(

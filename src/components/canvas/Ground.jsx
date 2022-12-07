@@ -13,6 +13,7 @@ const Ground = () => {
       <Plane args={[2, 2]} frustumCulled={false} matrixAutoUpdate={false}>
         <floorMaterial />
       </Plane>
+
       <RigidBody type="fixed">
         <Plane
           args={[500, 500]}
@@ -21,7 +22,25 @@ const Ground = () => {
         >
           <meshBasicMaterial color="white" />
         </Plane>
+
+        <Plane args={[500, 5]} position={[0, 2, 250]} rotation={[0, 0, 0]} />
+        <Plane
+          args={[500, 5]}
+          position={[0, 2, -250]}
+          rotation={[0, Math.PI, 0]}
+        />
+        <Plane
+          args={[500, 5]}
+          position={[250, 2, 0]}
+          rotation={[0, Math.PI / 2, 0]}
+        />
+        <Plane
+          args={[500, 5]}
+          position={[-250, 2, 0]}
+          rotation={[0, -Math.PI / 2, 0]}
+        />
       </RigidBody>
+
       <Plane
         args={[10, 10]}
         rotation={[-Math.PI / 2, 0, 0]}
