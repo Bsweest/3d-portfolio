@@ -24,6 +24,8 @@ export default function Companion() {
   const movingM = useSelector(() => joystickStates.moving.get());
   const moving = isM ? movingM : movingPC;
 
+  const controlM = useSelector(() => joystickStates.get());
+
   const { nodes, materials, animations } = useGLTF("/models/companion.glb");
   const { actions } = useAnimations(animations, modelRef);
 
@@ -38,9 +40,7 @@ export default function Companion() {
   }, [actions, moving]);
 
   useFrame(() => {
-    const { forward, backward, left, right, sprint } = isM
-      ? joystickStates.peek()
-      : get();
+    const { forward, backward, left, right, sprint } = isM ? controlM : get();
 
     const front = (sprint ? 22 : 12) * (Number(backward) - Number(forward));
     const side = (sprint ? 22 : 12) * (Number(right) - Number(left));

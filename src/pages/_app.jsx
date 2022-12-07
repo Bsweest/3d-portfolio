@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Layout from "@/components/dom/Layout";
 import Header from "@/config";
 import { isMobile, joystickStates } from "@/templates/global/Joystick";
+import CustomLoader from "@/components/dom/CustomLoader";
 
 const Scene = dynamic(() => import("@/components/canvas/Scene"), { ssr: true });
 
@@ -49,6 +50,8 @@ export default function App({
               {Component.canvas(pageProps)}
             </Scene>
           )}
+
+          <CustomLoader />
 
           <Component {...pageProps} />
         </Layout>

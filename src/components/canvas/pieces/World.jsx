@@ -718,9 +718,3 @@ export default function World() {
     </RigidBody>
   );
 }
-
-{
-  /* <MeshCollider type={false}>
-
-</MeshCollider> */
-}

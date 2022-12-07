@@ -57,4 +57,11 @@
     border-right: 0;
     margin-bottom: -2.5rem;
   }
+
+  .loader {
+    transition: opacity 300ms ease;
+  }
+  .bar {
+    transition: width 200ms;
+  }
 }
