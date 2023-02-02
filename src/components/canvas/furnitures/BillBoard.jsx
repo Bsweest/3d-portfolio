@@ -26,7 +26,7 @@ const BillBoard = ({ position, content }) => {
         <CuboidCollider
           position={[position[0] + 3.3, 3.5, position[2] - 1]}
           args={[5, 3.5, 2]}
-          rotation={[0, (PI * 20) / 180, 0]}
+          rotation={[0, (PI * 30) / 180, 0]}
         />
       </RigidBody>
 
@@ -34,7 +34,7 @@ const BillBoard = ({ position, content }) => {
         dispose={null}
         position={position}
         scale={[1.2, 1.2, 1.2]}
-        rotation={[0, -PI / 2.5, 0]}
+        rotation={[0, -PI / 3, 0]}
       >
         <mesh
           castShadow
@@ -58,8 +58,9 @@ const BillBoard = ({ position, content }) => {
 
       <Plane
         args={[10, 10]}
-        rotation={[-Math.PI / 2, 0, 0]}
+        rotation={[-PI / 2, 0, (PI * 30) / 180]}
         position={[position[0] + 15, 0, position[2]]}
+        scale={[1.2, 1.2, 1.2]}
       >
         <meshBasicMaterial
           alphaMap={des}

@@ -8,6 +8,7 @@ import {
   ShaderMaterial,
 } from "three";
 
+//da8a8b
 export default class FloorMaterial extends ShaderMaterial {
   constructor() {
     super();
@@ -15,7 +16,7 @@ export default class FloorMaterial extends ShaderMaterial {
     this.topLeft = "#1a2c80";
     this.topRight = "#282157";
     this.bottomRight = "#4a478a";
-    this.bottomLeft = "#da8a8b";
+    this.bottomLeft = "#fc888a";
 
     this.uniforms = {
       tBackground: { value: null },
